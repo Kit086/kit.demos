@@ -2,19 +2,16 @@ namespace ComparisonValueObject;
 
 public class Address //: ValueObject
 {
+    public Address()
+    {
+    }
+
     public Address(string country, string province, string city, string detail)
     {
         Country = country;
         Province = province;
         City = city;
         Detail = detail;
-    }
-
-    public Address(string country, string province, string city)
-    {
-        Country = country;
-        Province = province;
-        City = city;
     }
 
     public string Country { get; set; } = null!;
