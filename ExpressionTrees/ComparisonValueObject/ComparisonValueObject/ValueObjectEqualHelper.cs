@@ -5,7 +5,7 @@ namespace ComparisonValueObject;
 public static class ValueObjectEqualHelper
 {
     /// <summary>
-    /// 生成”检查值对象是否相等“的表达式树
+    /// 生成"检查值对象是否相等"的表达式树
     /// </summary>
     /// <param name="firstParameterPropertyAccessor">Func 委托表达式，用于取实体的值对象属性，在本例中是（p => p.Address）</param>
     /// <param name="secondParameter">用于比较的值对象参数（实际上就是 EF Core 的查询条件），在本例中是 Address 类型的值对象</param>
