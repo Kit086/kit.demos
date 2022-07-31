@@ -23,6 +23,6 @@ public class PointConfiguration : IEntityTypeConfiguration<Point>
     {
         builder.HasKey(x => x.Id);
         
-        builder.HasQueryFilter(x => !x.SoftDelete);
+        // builder.HasQueryFilter(x => !x.SoftDelete);
     }
 }

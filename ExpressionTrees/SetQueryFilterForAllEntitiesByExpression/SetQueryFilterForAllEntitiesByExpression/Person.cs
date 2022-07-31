@@ -23,6 +23,6 @@ public class PersonConfiguration : IEntityTypeConfiguration<Person>
         
         builder.Property(x => x.Name).IsUnicode().HasMaxLength(128).IsRequired();
 
-        builder.HasQueryFilter(x => !x.SoftDelete);
+        // builder.HasQueryFilter(x => !x.SoftDelete);
     }
 }
