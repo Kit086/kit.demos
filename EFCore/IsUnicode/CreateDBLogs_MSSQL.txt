@@ -1,0 +1,34 @@
+Build started...
+Build succeeded.
+
+info: 2022/8/6 00:26:00.385 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command)
+      Executed DbCommand (272ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+      CREATE DATABASE [IsUnicodeTest];
+
+info: 2022/8/6 00:26:00.746 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command)
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE [Persons] (
+          [Id] bigint NOT NULL IDENTITY,
+          [Name] nvarchar(128) NOT NULL,
+          CONSTRAINT [PK_Persons] PRIMARY KEY ([Id])
+      );
+
+info: 2022/8/6 00:26:00.750 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command)
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE [PersonWithoutUnicodeNames] (
+          [Id] bigint NOT NULL IDENTITY,
+          [Name] varchar(128) NOT NULL,
+          CONSTRAINT [PK_PersonWithoutUnicodeNames] PRIMARY KEY ([Id])
+      );
+
+info: 2022/8/6 00:26:00.754 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command)
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE [PersonWithUnicodeNames] (
+          [Id] bigint NOT NULL IDENTITY,
+          [Name] nvarchar(128) NOT NULL,
+          CONSTRAINT [PK_PersonWithUnicodeNames] PRIMARY KEY ([Id])
+      );
+
+dbug: 2022/8/6 00:26:00.771 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure)
+      'AppDbContext' disposed.
+Done.

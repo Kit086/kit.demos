@@ -1,0 +1,38 @@
+Build started...
+Build succeeded.
+
+info: 2022/8/5 23:47:42.320 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command)
+      Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE DATABASE `is_unicode_test`;
+
+info: 2022/8/5 23:47:42.653 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command)
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      ALTER DATABASE CHARACTER SET utf8mb4;
+
+info: 2022/8/5 23:47:42.687 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command)
+      Executed DbCommand (33ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE `Persons` (
+          `Id` bigint NOT NULL AUTO_INCREMENT,
+          `Name` varchar(128) CHARACTER SET utf8mb4 NOT NULL,
+          CONSTRAINT `PK_Persons` PRIMARY KEY (`Id`)
+      ) CHARACTER SET=utf8mb4;
+
+info: 2022/8/5 23:47:42.720 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command)
+      Executed DbCommand (32ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE `PersonWithoutUnicodeNames` (
+          `Id` bigint NOT NULL AUTO_INCREMENT,
+          `Name` varchar(128) CHARACTER SET utf8mb4 NOT NULL,
+          CONSTRAINT `PK_PersonWithoutUnicodeNames` PRIMARY KEY (`Id`)
+      ) CHARACTER SET=utf8mb4;
+
+info: 2022/8/5 23:47:42.754 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command)
+      Executed DbCommand (32ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE `PersonWithUnicodeNames` (
+          `Id` bigint NOT NULL AUTO_INCREMENT,
+          `Name` varchar(128) CHARACTER SET utf8mb4 NOT NULL,
+          CONSTRAINT `PK_PersonWithUnicodeNames` PRIMARY KEY (`Id`)
+      ) CHARACTER SET=utf8mb4;
+
+dbug: 2022/8/5 23:47:42.764 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure)
+      'AppDbContext' disposed.
+Done.
