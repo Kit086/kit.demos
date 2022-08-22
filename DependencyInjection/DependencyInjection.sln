@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjection", "DependencyInjection\DependencyInjection.csproj", "{33F6BD40-1860-4429-BDA6-FD4C6AD858CA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KDI", "KDI\KDI.csproj", "{54CFABB8-9F0D-4E51-97D8-38A528B647EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KDI.Console", "KDI.Console\KDI.Console.csproj", "{30B0F73F-4249-433E-B648-83AB35AFB232}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{33F6BD40-1860-4429-BDA6-FD4C6AD858CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33F6BD40-1860-4429-BDA6-FD4C6AD858CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33F6BD40-1860-4429-BDA6-FD4C6AD858CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54CFABB8-9F0D-4E51-97D8-38A528B647EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54CFABB8-9F0D-4E51-97D8-38A528B647EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54CFABB8-9F0D-4E51-97D8-38A528B647EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54CFABB8-9F0D-4E51-97D8-38A528B647EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30B0F73F-4249-433E-B648-83AB35AFB232}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30B0F73F-4249-433E-B648-83AB35AFB232}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30B0F73F-4249-433E-B648-83AB35AFB232}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30B0F73F-4249-433E-B648-83AB35AFB232}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
