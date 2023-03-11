@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
+using SerilogTimings;
 
 namespace TimingAndDiagnostic.Controllers;
 
@@ -12,16 +14,30 @@ public class WeatherForecastController : ControllerBase
     };
 
     private readonly ILogger<WeatherForecastController> _logger;
+    private readonly IDiagnosticContext _diagnosticContext;
 
-    public WeatherForecastController(ILogger<WeatherForecastController> logger)
+    public WeatherForecastController(ILogger<WeatherForecastController> logger, IDiagnosticContext diagnosticContext)
     {
         _logger = logger;
+        _diagnosticContext = diagnosticContext;
     }
 
     [HttpGet(Name = "GetWeatherForecast")]
-    public IEnumerable<WeatherForecast> Get()
+    public async Task<IEnumerable<WeatherForecast>> Get()
     {
-        _logger.LogInformation("Hello Serilog!");
+        _diagnosticContext.Set("Username", "kitlau");
+        _diagnosticContext.Set("UserId", 10086);
+        
+        using (Operation.Time("Do some DBQuery"))
+        {
+            await DBQuery();
+        }
+
+        using (Operation.Time("Do some IOTask"))
+        {
+            await IOTask();
+        }
+
         return Enumerable.Range(1, 5).Select(index => new WeatherForecast
         {
             Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
@@ -29,5 +45,15 @@ public class WeatherForecastController : ControllerBase
             Summary = Summaries[Random.Shared.Next(Summaries.Length)]
         })
         .ToArray();
+    }
+
+    private async Task DBQuery()
+    {
+        await Task.Delay(100);
+    }
+
+    private async Task IOTask()
+    {
+        await Task.Delay(1000);
     }
 }
