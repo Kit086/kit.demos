@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StructuredLoggingWithSerilo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimingAndDiagnostic", "02-TimingAndDiagnostic\TimingAndDiagnostic.csproj", "{29FEC52F-4868-441A-8165-051AF3399253}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeqCentralizedStructuredLogs", "03-SeqCentralizedStructuredLogs\SeqCentralizedStructuredLogs.csproj", "{83D23353-E229-4EB2-A51E-E62345AB8ED7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{29FEC52F-4868-441A-8165-051AF3399253}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29FEC52F-4868-441A-8165-051AF3399253}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29FEC52F-4868-441A-8165-051AF3399253}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83D23353-E229-4EB2-A51E-E62345AB8ED7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83D23353-E229-4EB2-A51E-E62345AB8ED7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83D23353-E229-4EB2-A51E-E62345AB8ED7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83D23353-E229-4EB2-A51E-E62345AB8ED7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

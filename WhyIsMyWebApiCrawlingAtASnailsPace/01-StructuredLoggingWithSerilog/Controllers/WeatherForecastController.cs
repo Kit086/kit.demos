@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace TimingAndDiagnostic.Controllers;
+namespace SeqCentralizedStructuredLogs.Controllers;
 
 [ApiController]
 [Route("[controller]")]

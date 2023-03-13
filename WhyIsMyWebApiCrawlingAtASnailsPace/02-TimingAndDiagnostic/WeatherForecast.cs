@@ -1,4 +1,4 @@
-namespace TimingAndDiagnostic;
+namespace SeqCentralizedStructuredLogs;
 
 public class WeatherForecast
 {
