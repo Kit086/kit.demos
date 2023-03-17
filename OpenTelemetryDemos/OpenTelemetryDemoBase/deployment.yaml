@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-api
+  labels:
+    app: demo-app
+    tier: opentelemetry-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      tier: opentelemetry-demo
+      app: demo-app
+  template:
+    metadata:
+      labels:
+        app: demo-app
+        tier: opentelemetry-demo
+    spec:
+      containers:
+        - name: client-api-container
+          image: kitdemo-opentelemetry/client-api:1.0.0
+          envFrom:
+            - configMapRef:
+                name: client-config
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 400m
+              memory: 150Mi
+            limits:
+              cpu: 800m
+              memory: 512Mi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-app-2
+      tier: opentelemetry-demo-server
+  template:
+    metadata:
+      labels:
+        app: demo-app-2
+        tier: opentelemetry-demo-server
+    spec:
+      containers:
+        - name: server-service-container
+          image: kitdemo-opentelemetry/server-service:1.0.0
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 400m
+              memory: 150Mi
+            limits:
+              cpu: 800m
+              memory: 512Mi

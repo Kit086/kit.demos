@@ -1,0 +1,6 @@
+proto < ./Protos/order.proto
+
+GRPC localhost:5000/OrderService/GetOrders
+{
+  "customer_name": "KitLau"
+}
