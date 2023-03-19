@@ -1,0 +1,43 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: client-api
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 80
+  selector:
+    tier: opentelemetry-demo
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: server-service
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 80
+  selector:
+    tier: opentelemetry-demo-server
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jaeger
+spec:
+  type: ClusterIP
+  ports:
+    - port: 16686
+      protocol: TCP
+      targetPort: 16686
+      name: jaeger-ui
+    - port: 6831
+      protocol: UDP
+      targetPort: 6831
+      name: jaeger-udp
+  selector:
+    tier: opentelemetry-demo-jaeger

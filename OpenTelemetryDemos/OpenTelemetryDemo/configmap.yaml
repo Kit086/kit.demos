@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: client-config
+  labels:
+    app: demo-app
+    tier: opentelemetry-demo
+data:
+  "ServerServiceAddress": "http://server-service"
+  "Jaeger__AgentHost": "jaeger"
+  "Jaeger__AgentPort": "6831"
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: server-config
+  labels:
+    app: demo-app-2
+    tier: opentelemetry-demo-server
+data:
+  "Jaeger__AgentHost": "jaeger"
+  "Jaeger__AgentPort": "6831"
