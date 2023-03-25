@@ -6,7 +6,7 @@ with open('unames.txt', 'r', encoding='utf-8') as input_file:
     unames = [line.strip() for line in input_file.readlines() if line.strip()]
 
 def run(playwright: Playwright, unames) -> None:
-    browser = playwright.chromium.launch(headless=False)
+    browser = playwright.firefox.launch(headless=False)
     context = browser.new_context()
     page = context.new_page()
     page.goto("https://search.bilibili.com/upuser")

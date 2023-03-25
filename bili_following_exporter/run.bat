@@ -19,7 +19,7 @@ echo 从关注列表中获取用户名列表...
 py .\get_unames.py
 
 echo 执行关注...
-pytest --headed .\follow.py --browser firefox
+pytest .\follow.py
 
 deactivate
 
