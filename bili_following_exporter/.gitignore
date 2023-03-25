@@ -1,0 +1,14 @@
+Include/
+Lib/
+Scripts/
+__pycache__/
+.pytest_cache/
+
+pyvenv.cfg
+output.json
+unames.txt
+failed_unames.txt
+notfound_unames.txt
+followed_unames.txt
+uncertain_unames.txt
+already_followed_unames.txt
