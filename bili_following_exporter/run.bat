@@ -15,13 +15,11 @@ playwright install firefox
 echo 导出关注列表...
 py .\export.py
 
-echo 从关注列表中获取用户名列表...
-py .\get_unames.py
-
 echo 执行关注...
 pytest .\follow.py
 
-deactivate
+echo 退出 python 虚拟环境...
+call deactivate
 
 echo 执行完成！
 

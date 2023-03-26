@@ -1,7 +1,6 @@
 import requests
 import json
 
-# 从 settings.json 文件中读取 Cookie 和 vmid
 with open('settings.json', 'r', encoding='utf-8') as settings_file:
     settings = json.load(settings_file)
     cookie = settings['cookie']
@@ -18,9 +17,9 @@ params = {
     'jsonp': 'jsonp'
 }
 
-headers = {'Cookie': cookie}
+headers = { 'cookie': cookie }
 
-results = []
+data = []
 
 while True:
     params['pn'] += 1
@@ -30,7 +29,10 @@ while True:
     if 'data' not in json_data or 'list' not in json_data['data'] or len(json_data['data']['list']) == 0:
         break
 
-    results.extend(json_data['data']['list'])
+    data.extend(json_data['data']['list'])
 
-with open('output.json', 'w', encoding='utf-8') as output_file:
-    json.dump(results, output_file, ensure_ascii=False, indent=4)
+unames = [item['uname'] for item in data]
+
+with open('unames.txt', 'w', encoding='utf-8') as output_file:
+    for uname in unames:
+        output_file.write(uname + '\n')

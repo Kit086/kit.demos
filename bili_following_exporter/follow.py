@@ -62,7 +62,6 @@ def run(playwright: Playwright, unames) -> None:
 
     # 将未找到的 unames 写入 txt 文件
     if notfound_unames:
-        # 将未找到的 unames 写入 txt 文件
         with open('notfound_unames.txt', 'w', encoding='utf-8') as output_file:
             for notfound_uname in notfound_unames:
                 output_file.write(f'{notfound_uname}\n')
