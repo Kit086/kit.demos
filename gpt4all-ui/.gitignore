@@ -1,0 +1,12 @@
+bin/
+etc/
+include/
+lib/
+lib64/
+models/
+share/
+
+pyvenv.cfg
+lib64
+
+*.model
