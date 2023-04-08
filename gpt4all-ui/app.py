@@ -14,6 +14,3 @@ def generate_text():
     input_text = request.form['input_text']
     generated_text = model.generate(input_text, n_predict=55)
     return jsonify({'response': generated_text})
-
-if __name__ == '__main__':
-    app.run(debug=True)
