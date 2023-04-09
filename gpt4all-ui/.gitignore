@@ -8,5 +8,3 @@ share/
 
 pyvenv.cfg
 lib64
-
-*.model
