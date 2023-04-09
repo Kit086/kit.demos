@@ -15,7 +15,6 @@
     <div class="navbar bg-neutral text-neutral-content flex justify-center">
         <a class="btn btn-ghost normal-case text-xl">AI Chat Application</a>
     </div>
-
     <div class="container mx-auto px-4 py-12 flex-grow">
         <div class="hero h-96"
             style="background-image: url(https://images.pexels.com/photos/16018144/pexels-photo-16018144.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);">
@@ -26,7 +25,6 @@
                     <p class="mb-5">Experience real-time conversation with our AI model.</p>
                     <label class="swap swap-flip text-6xl">
                         <input type="checkbox" />
-
                         <div class="swap-on">😈</div>
                         <div class="swap-off">😇</div>
                     </label>
@@ -121,7 +119,6 @@
             });
 
             function getRandomChatBubbleClass() {
-                console.log("getRandomChatBubbleClass");
                 const classes = [
                     "chat-bubble-primary",
                     "chat-bubble-secondary",
@@ -135,7 +132,6 @@
             }
 
             function addMessage(sender, message, bubbleClass = "") {
-                console.log("addMessage")
                 if (bubbleClass === "") {
                     bubbleClass = getRandomChatBubbleClass();
                 }
@@ -149,7 +145,6 @@
             }
 
             function showWaitingAnimation() {
-                console.log("showWaitingAnimation");
                 var bubbleClass = getRandomChatBubbleClass();
                 const waitingAnimationHTML = `
             <div class="chat chat-start">
@@ -166,7 +161,6 @@
             }
 
             function removeWaitingAnimation() {
-                console.log("removeWaitingAnimation");
                 const waitingAnimation = document.querySelector(".loading-animation");
                 if (waitingAnimation) {
                     waitingAnimation.closest(".chat").remove();

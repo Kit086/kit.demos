@@ -9,7 +9,7 @@ model = Model(ggml_model='./models/gpt4all-converted.bin', n_ctx=512)
 def index():
     return render_template('index.html')
 
-@app.route('/generate', methods=['POST'])
+@app.post('/generate')
 def generate_text():
     input_text = request.form['input_text']
     generated_text = model.generate(input_text, n_predict=55)
