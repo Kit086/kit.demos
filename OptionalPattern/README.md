@@ -1,0 +1,1 @@
+代码拷贝自：https://github.com/zoran-horvat/optional
